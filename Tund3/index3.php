@@ -5,8 +5,11 @@
 	echo $dateToday;
 	$weekdayNow = date("N");
 	$weekdayNamesET = ["esmaspäev", "teisipäev", "kolmapäev", "nejapäev", "reede", "laupäev", "pühapäev"];
+	$monthNamesET = ["jaanuar","veebruar","märts","aprill","mai","juuni","juuli","august","september","oktoober","november","detsember"];
 	//echo $weekdayNamesET[1];
 	$hourNow = date("G");
+	$monthNow = date("n");
+	$yearNow = date("Y");
 	$partOfDay = "";
 		if ($hourNow < 8) {
 		$partOfDay = "varane hommik";
@@ -37,7 +40,8 @@
   
   <p>Tundides tehtu: <a href="photo.php">photo.php</a></p>
   
-  <?php echo "<p>Tänane kuupäev on: " . $dateToday .", " .$weekdayNamesET[$weekdayNow -1] .".</p>\n";
+  <?php echo "<p> Tänane kuupäev on ". $weekdayNamesET[$weekdayNow - 1] . ", " .$monthNow . ". " .$monthNamesET[$monthNow - 1]. " ". $yearNow . ".</p>\n";
+		//echo "<p>Täna kuupäev on: " . $dateToday .", " .$weekdayNamesET[$weekdayNow -1] .".</p>\n";
 		//echo "<p>Täna on: " .$weekdayNamesET[$weekdayNow - 1] .".</p>";
 		echo "<p>Lehe avamsie hetkel oli kell: " . date("H:i:s") .". Käes oli " . $partOfDay .".</p>\n";
     ?>
